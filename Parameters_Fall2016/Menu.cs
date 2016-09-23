@@ -9,12 +9,50 @@ namespace Parameters_Fall2016
     class Menu
     {
         //fields
+        private List<string> shoppingCart;
+        private string userName;
+        private string billingInfo;
+        private double cartPrice;
 
         //properties
+        public string UserName
+        {
+            get { return this.userName; }
+            set {
+                    if (value.Length > 4)
+                    {
+                        this.userName = value;
+                    }
+                }
+        }
+
+        public string BillingInfo
+        {
+            get { return this.billingInfo; }
+            set { this.billingInfo = value; }
+        }
+
+        public string DeliveryInfo
+        {
+            get;
+            set;
+        }
 
         //constructors
+        public Menu( string userName)
+        {
+            this.userName = userName;
+            shoppingCart = new List<string>();
+        }
+
 
         //methods
+        public void PurchaseItem(string itemName)
+        {
+            double itemPrice = itemName.Length * 10;
+            cartPrice += itemPrice;
+            shoppingCart.Add(itemName + ": $" + itemPrice);
+        }
 
 
     }
