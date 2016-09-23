@@ -54,6 +54,24 @@ namespace Parameters_Fall2016
             shoppingCart.Add(itemName + ": $" + itemPrice);
         }
 
+        public void DisplayCart()
+        {
+            foreach (string item in shoppingCart)
+            {
+                Console.WriteLine(item);
+            }
+            TotalPrice(true);
+        }
+
+        public double TotalPrice(bool display)
+        {
+            if (display)
+            {
+                Console.WriteLine("Total Price: $" + cartPrice);
+            }
+
+            return cartPrice;
+        }
 
     }
 }
