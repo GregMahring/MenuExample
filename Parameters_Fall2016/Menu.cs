@@ -39,7 +39,7 @@ namespace Parameters_Fall2016
         }
 
         //constructors
-        public Menu( string userName)
+        public Menu(string userName)
         {
             this.userName = userName;
             shoppingCart = new List<string>();
